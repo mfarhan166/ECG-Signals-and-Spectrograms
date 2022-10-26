@@ -1,4 +1,6 @@
 ECG-Signals-and-Spectrograms
+
+
 ::General Information::
 
 At the main directory, there are two jupyter notebooks, of which one is showing the complete implemenation code for Spectrograms data and the other is showing the same code but for implementation of Raw ECG signals data. We showed the output of each code part inside the each notebook.
@@ -7,7 +9,10 @@ There is another folder named as Graph, which consists of jupyter notebook that 
 
 One more folder is sampling rate, which consists of 08 jupyter notebooks and each of which is named to the particular sample rate along with implemenation code in python programming language.
 
-::How to run the code?:: Please follow the below steps:
+
+::How to run the code?:: 
+
+Please follow the below steps:
 
 Step 1: upload/open the jupyter notebook in any environment i.e., Google Colab, Jupyter Lab
 
