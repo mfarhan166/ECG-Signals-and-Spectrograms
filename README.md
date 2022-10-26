@@ -20,17 +20,17 @@ Step 2: Prepare the data repository (i.e., your own) in the similar format as gi
 
 ---dataset-colab (This is the main folder, you may rename it)
 
--------> Train
+-------Train
 
-------------> Class I data
+------------Class I data
 
-------------> Class II data
+------------Class II data
 
 -------Validate
 
------------- Class I data
+------------Class I data
 
------------- Class II data
+------------Class II data
 
 (Hint: Please check once the Train and Validate data path and verify it's correct for you)
 
