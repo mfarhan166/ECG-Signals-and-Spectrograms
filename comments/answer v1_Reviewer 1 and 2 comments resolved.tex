@@ -13,7 +13,14 @@
 
 \begin{document}
 
-\section{Editor}
+Dear Reviewer,
+
+\vspace{0.25in}
+
+Thank you for considering our manuscript for publication and for providing constructive feedback.
+Hereunder you will find our detailed replies to all Your comments.
+The changes are highlighted in the output of the latexdiff file attached to this cover letter.
+
 
 \section{Reviewer 1}
 
@@ -29,11 +36,11 @@ Because the novelty wast not stated explicitly in the text, we modified 'Introdu
 
 \paragraph{Issue 1:}
 \begin{displayquote}
-The work concerns the classification of ECG signals, and in particular "Anteroseptal myocardial infarction (ASMI) considered in this study is one of the life-threatening heart diseases that occurs due to the rupture of the volatile atherosclerotic plaque in the left anterior descending artery [3]." In the entire paper, there is not a single example of an ECG signal waveform with this cardiovascular disease, nor is it shown how the spectrogram of the ECG signal differs between a healthy person and one with ASMI or other cardiovascular disease. 
+The work concerns the classification of ECG signals, and in particular "Anteroseptal myocardial infarction (ASMI) considered in this study is one of the life-threatening heart diseases that occurs due to the rupture of the volatile atherosclerotic plaque in the left anterior descending artery [3]." In the entire paper, there is not a single example of an ECG signal waveform with this cardiovascular disease, nor is it shown how the spectrogram of the ECG signal differs between a healthy person and one with ASMI or other cardiovascular disease.
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. Lead V1 data was considered for the ECG signals to differentiate between NORMAL and ASMI sample. The difference can be find in the base of the signals. As asked, the ECG signals and Spectrogram of both cateogories are presented in below figure. One can see a difference between NORM and ASMI spectorgram at signal base. The shadow is spreaded in ASMI spectrogram while it is condensed in NORMAL spectrogram. 
+Thank you for this issue. Lead V1 data was considered for the ECG signals to differentiate between NORMAL and ASMI sample. The difference can be find in the base of the signals. As asked, the ECG signals and Spectrogram of both cateogories are presented in below figure. One can see a difference between NORM and ASMI spectorgram at signal base. The shadow is spreaded in ASMI spectrogram while it is condensed in NORMAL spectrogram.
 \includegraphics[scale=0.55]{Signal and spectrogram img.JPG}
 \\\\
 Since there was not a spectrogram example given in the article so we added a figure (Fig. 1) in 'Introduction' section with the following text \textit{`In the below fig. 2, (a) and (c) are showing the raw signal of NORM and ASMI class respectively, while (b) and (d) represents the transformation into spectrograms for both classes. A difference can be seen between NORM and ASMI spectrogram at signal base. There is a spread or light shadow in ASMI spectrogram which is condensed or dark in NORM spectrogram.'} in lines 102-106
@@ -65,11 +72,11 @@ Section 3.1.2 "Frequency Filtration". There is a lack of mathematical formulas f
 
 \paragraph{Issue 4a:}
 \begin{displayquote}
-Section 3.1.2 "Frequency Filtration". There is a lack of mathematical formulas for the steps involved in implementing the proposed algorithm. There is a description of the algorithm (Algorithm 2), but it is insufficient for a correct representation of the filtration. Why is the Sampling Frequency  value calculated in step 3? Is it a different frequency than the one at which the signal was recorded? In the next step (del (...)) the numeric value of 2 was used. Where does this value come from? What is its meaning? This operation suggests cutting all frequency components above a certain frequency value in the frequency spectrum. It is worth showing the frequency spectrum of the analyzed signal after such an operation and the signal in the time domain. How does this operation affect the spectrograms obtained later (by STFT)? 
+Section 3.1.2 "Frequency Filtration". There is a lack of mathematical formulas for the steps involved in implementing the proposed algorithm. There is a description of the algorithm (Algorithm 2), but it is insufficient for a correct representation of the filtration. Why is the Sampling Frequency  value calculated in step 3? Is it a different frequency than the one at which the signal was recorded? In the next step (del (...)) the numeric value of 2 was used. Where does this value come from? What is its meaning? This operation suggests cutting all frequency components above a certain frequency value in the frequency spectrum. It is worth showing the frequency spectrum of the analyzed signal after such an operation and the signal in the time domain. How does this operation affect the spectrograms obtained later (by STFT)?
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. The signal was decompose into time-frequency domain and then corresponding frequencies were calculated through the sampling frequency  which were used in the next stage to apply the threshold for frequency filtration.  As mentioned, the said sampling frequency is not different than at which signal was recorded but it is a type of variable in which corresponding frequencies were saved. Since, one of the study aim was to reduce the data, therefore, by analysing ECG signals visually and by experiments we set the threshold of 2 which means all the data points associated with frequency more than two i.e., high QRS peaks (downward in lead V1) will be discard because the signals can classify through the base patterns. 
+Thank you for this issue. The signal was decompose into time-frequency domain and then corresponding frequencies were calculated through the sampling frequency  which were used in the next stage to apply the threshold for frequency filtration.  As mentioned, the said sampling frequency is not different than at which signal was recorded but it is a type of variable in which corresponding frequencies were saved. Since, one of the study aim was to reduce the data, therefore, by analysing ECG signals visually and by experiments we set the threshold of 2 which means all the data points associated with frequency more than two i.e., high QRS peaks (downward in lead V1) will be discard because the signals can classify through the base patterns.
 
 \paragraph{Issue 4b:}
 \begin{displayquote}
@@ -89,7 +96,7 @@ What are the characteristics of the PTB-XL base signals used in this study (e.g.
 
 \paragraph{Issue 5a:}
 \begin{displayquote}
-What are the characteristics of the PTB-XL base signals used in this study (e.g., sampling rate, signal length)? 
+What are the characteristics of the PTB-XL base signals used in this study (e.g., sampling rate, signal length)?
 \end{displayquote}
 
 \paragraph{Answer:}
@@ -103,7 +110,7 @@ What is the case count in each class of training, test and validation sets?
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for comment. The complete dataset contains 21,837 samples, out of which majority belongs to Normal class. However, data was divided into two classes i.e., NORM and ASMI. The NORM class contains 18,954 (15,564 training and 3,390 validation). The ASMI class has 2,283 samples, therefore, two data augmentation approaches were applied on on spectrograms i.e., horizontal flip and contrast to handle the class imbalance. Some sample duplication were also applied in training set of ASMI class to achieve the equal figure.  
+Thank you for comment. The complete dataset contains 21,837 samples, out of which majority belongs to Normal class. However, data was divided into two classes i.e., NORM and ASMI. The NORM class contains 18,954 (15,564 training and 3,390 validation). The ASMI class has 2,283 samples, therefore, two data augmentation approaches were applied on on spectrograms i.e., horizontal flip and contrast to handle the class imbalance. Some sample duplication were also applied in training set of ASMI class to achieve the equal figure.
 
 \paragraph{Issue 6:}
 \begin{displayquote}
@@ -117,7 +124,7 @@ The Model architecture chosen methodology is added in section `3.3. Model Archit
 
 \paragraph{Issue 7:}
 \begin{displayquote}
-"Learning Rate". Figure 5. It is conventionally assumed that numerical values are presented in ascending order (in line 338 it is the reverse). Unfortunately, this can lead to erroneous conclusions when analyzing the waveforms presented in Figure 5. I would suggest using a logarithmic scale on the X axis and an ascending order of learning rate values. 
+"Learning Rate". Figure 5. It is conventionally assumed that numerical values are presented in ascending order (in line 338 it is the reverse). Unfortunately, this can lead to erroneous conclusions when analyzing the waveforms presented in Figure 5. I would suggest using a logarithmic scale on the X axis and an ascending order of learning rate values.
 \end{displayquote}
 
 \paragraph{Answer:}
@@ -132,7 +139,7 @@ From description of PTB-XL database given at "PTB-XL, a large publicly available
 
 \paragraph{Issue 8a:}
 \begin{displayquote}
-From description of PTB-XL database given at "PTB-XL, a large publicly available electrocardiography dataset v1.0.2 (physionet.org)" (https://physionet.org/content/ptb-xl/1.0.2/) it follows that "The waveform files are stored in WaveForm DataBase (WFDB) format with 16 bit precision at a resolution of 1microV/LSB and a sampling frequency of 500Hz (records500/). For the user’s convenience we also release a downsampled versions of the waveform data at a sampling frequency of 100Hz (records100/)." What is the purpose of oversampling the ECG signal?  
+From description of PTB-XL database given at "PTB-XL, a large publicly available electrocardiography dataset v1.0.2 (physionet.org)" (https://physionet.org/content/ptb-xl/1.0.2/) it follows that "The waveform files are stored in WaveForm DataBase (WFDB) format with 16 bit precision at a resolution of 1microV/LSB and a sampling frequency of 500Hz (records500/). For the user’s convenience we also release a downsampled versions of the waveform data at a sampling frequency of 100Hz (records100/)." What is the purpose of oversampling the ECG signal?
 \end{displayquote}
 
 \paragraph{Answer:}
@@ -146,7 +153,7 @@ From Figure 6, it can be seen that the highest accuracy is achieved just for the
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. Yes, the highest accuracy achieved at 100 Hz sampling rate which is the original by the author of the PTB-XL dataset. Although, there is no any significant achievement in terms of accuracy in this experiment because of data loss in downsampling and adding noise when performed upsampling but this way the proposed work filled a research hole. Similarly, when it's realized that there is no good accuracy appearing, sampling rate limit to 1 kHz. The said experiment reflects that the idea of data agumentation through upsampling or downsampling will not be a good step. However, we are open to remove this part from our study upon your suggestion. 
+Thank you for this issue. Yes, the highest accuracy achieved at 100 Hz sampling rate which is the original by the author of the PTB-XL dataset. Although, there is no any significant achievement in terms of accuracy in this experiment because of data loss in downsampling and adding noise when performed upsampling but this way the proposed work filled a research hole. Similarly, when it's realized that there is no good accuracy appearing, sampling rate limit to 1 kHz. The said experiment reflects that the idea of data agumentation through upsampling or downsampling will not be a good step. However, we are open to remove this part from our study upon your suggestion.
 
 \paragraph{Issue 9:}
 \begin{displayquote}
@@ -173,7 +180,16 @@ The given link is inactive https://github.com/mfarhan166/ECG-Signals-and-Spectro
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for checking the status of the link. The repository has the implementation code and that's why we set it as Private at this stage. We will change the status to Public as soon we will receive the acceptace from the journal. The repository is working fine at us. 
+Thanks for checking the status of the link. The repository has the implementation code and that's why we set it as Private at this stage. We will change the status to Public as soon we will receive the acceptace from the journal. The repository is working fine at us.
+
+
+
+\vspace{0.25in}
+
+Sincerely yours,\\
+Muhammad Farhan Safdar\\
+for the authors
+
 
 \section{Reviewer 2}
 
@@ -205,7 +221,7 @@ The related works chapter is very good and presents a comprehensive and detailed
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for the appreciation. 
+Thanks for the appreciation.
 
 \paragraph{Issue 4:}
 \begin{displayquote}
@@ -218,14 +234,14 @@ Thanks for the pointing out. The approaches in methodology is section is introdu
 The ECG signals may contain various type of noises i.e., baseline wander, power line interference which produces some additional frequency components i.e., low, and high frequencies and can affect the classification accuracy. Therefore, wavelet trans-formation was considered for denoising the signals. Similarly, Fourier Transformation divides the biomedical signals into time-frequency domain, through which an un-wanted frequency can be filtered with the purpose of data size reduction. The key ad-vantage of reducing data size is to present the complete data into less resolution image i.e., spectrogram which helps in memory and computational management. Spectro-grams depicts the data into more distinguishable form than the raw signals i.e., recent studies [38-40] reveals that the data feed as spectrograms into neural network resulted in better accuracy which urged us to produce spectrograms using STFT.  \\\\
 
 A short introduction is added in section `methodology' with the text of '\textit{The ECG signals may contain various type of noises i.e., baseline wander, power line interference which produces some additional frequency components i.e., low, and high frequencies and can affect the classification accuracy. Therefore, wavelet trans-formation was considered for denoising the signals. Similarly, Fourier Transformation divides the biomedical signals into time-frequency domain, through which an un-wanted frequency can be filtered with the purpose of data size reduction. The key ad-vantage of reducing data size is to present the complete data into less resolution image i.e., spectrogram which helps in memory and computational management. Spectro-grams depicts the data into more distinguishable form than the raw signals i.e., recent studies [38-40] reveals that the data feed as spectrograms into neural network resulted in better accuracy which urged us to produce spectrograms using STFT. }' at lines 222-232
- 
+
 \paragraph{Issue 5:}
 \begin{displayquote}
-It must be pointed out that some personal pronouns are being used which is not the correct form for a journal paper. Occurrences of “we” (e.g. line 204, 305, 355…and many others), our (e.g.line 204,217,233…and many others) must be changed to impersonal forms.  In the current form, the language sometimes looks like a student thesis, not a scientific paper. It is especially visible in Tab.2 and 3 with the field name “Our proposed Work”
+It must be pointed out that some personal pronouns are being used which is not the correct form for a journal paper. Occurrences of “we” (e.g. line 204, 305, 355…and many others), our (e.g.lines $204,217,233 \ldots$ and many others) must be changed to impersonal forms.  In the current form, the language sometimes looks like a student thesis, not a scientific paper. It is especially visible in Tab.2 and 3 with the field name “Our proposed Work”
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for raising the point. The word like `we' and `our' are removed and sentence are slightly changed at various lines and mentioned tables. 
+Thanks for raising the point. The word like `we' and `our' are removed and sentence are slightly changed at various lines and mentioned tables.
 
 \paragraph{Issue 6:}
 \begin{displayquote}
@@ -244,6 +260,6 @@ The conclusions look good. However, again multiple uses of personal pronouns mak
 \paragraph{Answer:}
 Thanks for raising the point. Use of personal pronouns removed from the whole paper and sentences are adjusted accordingly. \\\\
 
-The novelty is described in the section `abstract' with the text of '\textit{The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power.}' at lines 21-26 
+The novelty is described in the section `abstract' with the text of '\textit{The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power.}' at lines 21-26
 
 \end{document}
