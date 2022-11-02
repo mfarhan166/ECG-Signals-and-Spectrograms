@@ -23,10 +23,9 @@ In truth, the purpose of the work is not precisely defined. Reading the article,
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover,  frequency filtration was applied through STFT with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power.
+Thank you for this issue. The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover,  frequency filtration was applied through STFT with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power.\\\\
 
-Because the novelty wast not stated explicitly in the text, we modified 'XXX' section adding '...' in lines XXX-YYY.
-Robert Nowak: I suggest to add 1 sentennce in end of introduction.
+Because the novelty wast not stated explicitly in the text, we modified 'Introduction' section adding '\textit{The novelty of proposed work is representation of data to convolutional neural net-work model in well-defined form i.e., Spectrograms. Additionally, data size reduction aim is achieved through frequency filtration at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ulti-mately requires more memory and computational power.}' in lines 125-129.
 
 \paragraph{Issue 1:}
 \begin{displayquote}
@@ -36,7 +35,8 @@ The work concerns the classification of ECG signals, and in particular "Anterose
 \paragraph{Answer:}
 Thank you for this issue. Lead V1 data was considered for the ECG signals to differentiate between NORMAL and ASMI sample. The difference can be find in the base of the signals. As asked, the ECG signals and Spectrogram of both cateogories are presented in below figure. One can see a difference between NORM and ASMI spectorgram at signal base. The shadow is spreaded in ASMI spectrogram while it is condensed in NORMAL spectrogram. 
 \includegraphics[scale=0.55]{Signal and spectrogram img.JPG}
-
+\\\\
+Since there was not a spectrogram example given in the article so we added a figure (Fig. 1) in 'Introduction' section with the following text \textit{`In the below fig. 2, (a) and (c) are showing the raw signal of NORM and ASMI class respectively, while (b) and (d) represents the transformation into spectrograms for both classes. A difference can be seen between NORM and ASMI spectrogram at signal base. There is a spread or light shadow in ASMI spectrogram which is condensed or dark in NORM spectrogram.'} in lines 102-106
 
 \paragraph{Issue 2:}
 \begin{displayquote}
@@ -44,15 +44,19 @@ Thank you for this issue. Lead V1 data was considered for the ECG signals to dif
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for asking. In this study, STFT is used for time-frequency transformation because it is comparatively faster and has good precision as highlighted in [46]. The other possible time-frequency transformation methods are Fast Fourier Transformation [45], synchrosqueezed transform [46] and  Continuous Wavelet Transformation [47]. 
+Thanks for asking. In this study, STFT is used for time-frequency transformation because it is comparatively faster and has good precision as highlighted in [46]. The other possible time-frequency transformation methods are Fast Fourier Transformation [45], synchrosqueezed transform [46] and  Continuous Wavelet Transformation [47]. \\\\
 ‌
+Because we utilized STFT only therefore we added one line in the `introduction' section adding '\textit{STFT is comparatively faster and has good precision as highlighted in [46]. The other possible time-frequency transformation methods are Fast Fourier Transformation [45], synchro squeezed transform [46] and Continuous Wavelet Transformation [47].'} at lines 92-95
+
 \paragraph{Issue 3:}
 \begin{displayquote}
 Quite a few modern (recently published) methods of noise reducing in the ECG signal have been presented, so why was the wavelet transform used, which has been known for more than a dozen years and is known not to work effectively in all cases, which is important when analyzing ECG signals with heart disease.
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for raising this issue. The main reason for preference of wavelet transformation for signal denoising is that it offers range of wavelets i.e., db, haar, coif, sym and bior. Therefore, there are number of options available under single approach to find the best matching wavelet for the presented problem. 
+Thank you for raising this issue. The main reason for preference of wavelet transformation for signal denoising is that it offers range of wavelets i.e., db, haar, coif, sym and bior. Therefore, there are number of options available under single approach to find the best matching wavelet for the presented problem. \\\\
+
+The reason is given in section `introduction` adding '\textit{The main reason for preference of WT for signal denoising is that it offers range of wavelets i.e., Daubechies, Haar, Coif, Sym and Bior. Therefore, there are number of op-tions available under single approach to find the best matching wavelet for the pre-sented problem.}' at lines 84-87
 
 \paragraph{Issue 4:}
 \begin{displayquote}
@@ -74,7 +78,9 @@ Thank you for this issue. The signal was decompose into time-frequency domain an
 \paragraph{Answer:}
 Thank you for this issue. The figure has been added.\\\\
 \includegraphics[scale=0.5]{before and after spectrogram.JPG}\\
-In the above figure, (a) is showing spectrogram before frequency filtration while (b) is showing after operation. One can see the black shadow reduced in fig (b) due to frequency filtration operation. 
+In the above figure, (a) is showing spectrogram before frequency filtration while (b) is showing after operation. One can see the black shadow reduced in fig (b) due to frequency filtration operation. \\\\
+
+A figure 3 added in Section `3.1.2. Frequency Filtration ` with the text '\textit{In the below Fig. 3, (a) is showing spectrogram before frequency filtration while (b) is showing after operation. One can see the black shadow reduced in fig (b) due to fre-quency filtration operation.}' at lines 284-286
 
 \paragraph{Issue 5:}
 \begin{displayquote}
@@ -87,7 +93,9 @@ What are the characteristics of the PTB-XL base signals used in this study (e.g.
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for raising this issue. The PTB-XL signal were originaly calculated at sampling rate of 100 Hz and 500 Hz. However, 100 Hz sampling rate was choosen in which each signal measured for 10 seconds of the length. 
+Thank you for raising this issue. The PTB-XL signal were originaly calculated at sampling rate of 100 Hz and 500 Hz. However, 100 Hz sampling rate was choosen in which each signal measured for 10 seconds of the length. \\\\
+
+The information about sampling rate is added in section `3.2. Dataset Preparation' with the text of '\textit{The PTB-XL signal were originally calculated at sampling rate of 100 Hz and 500 Hz. However, 100 Hz sampling rate was chosen in which each signal measured for 10 seconds of the length. }' at lines 302-304
 
 \paragraph{Issue 5b:}
 \begin{displayquote}
@@ -103,7 +111,9 @@ Section 3.3 "Model Architecture". What criterion was used to select the structur
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for asking. Firstly, six number of layers were choosen randomly and attempted model training with different hyperparameters. However, the accuracy was not good as it is. Therefore, number of layers were reduced and re-tune the hyperparameters. The best accuracy achieved at four layers and with the mentioned hyperparameters. 
+Thank you for asking. Firstly, six number of layers were choosen randomly and attempted model training with different hyperparameters. However, the accuracy was not good as it is. Therefore, number of layers were reduced and re-tune the hyperparameters. The best accuracy achieved at four layers and with the mentioned hyperparameters. \\\\
+
+The Model architecture chosen methodology is added in section `3.3. Model Architecture' with the text of '\textit{Therefore, number of layers were reduced and re-tune the hyperparameters. The best accuracy achieved at four layers and with the mentioned hyperparameters i.e., as giv-en above. }' at lines 335-337
 
 \paragraph{Issue 7:}
 \begin{displayquote}
@@ -111,7 +121,9 @@ Thank you for asking. Firstly, six number of layers were choosen randomly and at
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for pointing out. The presented learning rates are in ascending order both at line 338 and in the figure X axis. 
+Thank you for pointing out. The presented learning rates are in ascending order both at line 338 and in the figure X axis. \\\\
+
+Fig 7: learning rate is revised with ascending order at X-axis in section `4.4.3. Learning Rate ' at Fig. 7 and lines 380-381
 
 \paragraph{Issue 8:}
 \begin{displayquote}
@@ -124,7 +136,9 @@ From description of PTB-XL database given at "PTB-XL, a large publicly available
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. Our preposition was to increase and decrease the sampling rate gradually w.r.t. actual learning rate with the purpose to test whether any possiblity to acheive equivalent accuracy w.r.t. original sampling rate.  
+Thank you for this issue. Our preposition was to increase and decrease the sampling rate gradually w.r.t. actual learning rate with the purpose to test whether any possiblity to acheive equivalent accuracy w.r.t. original sampling rate.  \\\\
+
+The preposition is added in section `4.4.4. Sampling Rate' with the text of '\textit{ With this experiment, our preposition was to increase and decrease the sampling rate gradually w.r.t. actual learning rate with the purpose to test whether any possibility to achieve equivalent accuracy compare to original sampling rate.}' at lines 403-406
 
 \paragraph{Issue 8b:}
 \begin{displayquote}
@@ -132,7 +146,7 @@ From Figure 6, it can be seen that the highest accuracy is achieved just for the
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. Yes, the highest accuracy achieved at 100 Hz sampling rate which is the original by the author of the PTB-XL dataset. Although, there is no any significant achievement in terms of accuracy in this experiment because of data loss in downsampling and adding noise when performed upsampling but this way the proposed work filled a research hole. Similarly, when it's realized that there is no good accuracy appearing, sampling rate limit to 1 kHz. The said experiment reflects that the idea of data agumentation through upsampling or downsampling will not be a good step. However, we are open to remove this part from our study upon your suggestion after the comment response. 
+Thank you for this issue. Yes, the highest accuracy achieved at 100 Hz sampling rate which is the original by the author of the PTB-XL dataset. Although, there is no any significant achievement in terms of accuracy in this experiment because of data loss in downsampling and adding noise when performed upsampling but this way the proposed work filled a research hole. Similarly, when it's realized that there is no good accuracy appearing, sampling rate limit to 1 kHz. The said experiment reflects that the idea of data agumentation through upsampling or downsampling will not be a good step. However, we are open to remove this part from our study upon your suggestion. 
 
 \paragraph{Issue 9:}
 \begin{displayquote}
@@ -140,7 +154,9 @@ Table 3. Accuracy is not the only parameter used to assess classification, and s
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for the suggestion. Parameters like sensitivity, specficity and precision has been added to the table in contrast with other authors obtained metrics. 
+Thanks for the suggestion. Parameters like sensitivity, specficity and precision has been added to the table in contrast with other authors obtained metrics. \\\\
+
+Modification done in Table 3 at line 430
 
 \paragraph{Issue 10:}
 \begin{displayquote}
@@ -148,8 +164,9 @@ Thanks for the suggestion. Parameters like sensitivity, specficity and precision
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for pointing out. By mistake, the second was written as 25 but it is 26 in real and has been rectified.
+Thanks for pointing out. By mistake, the second was written as 25 but it is 26 in real and has been rectified.\\\\
 
+The modification is done in section `Table 1: Summary of the Literature Review' at lines 220-221
 \paragraph{Issue 11:}
 \begin{displayquote}
 The given link is inactive https://github.com/mfarhan166/ECG-Signals-and-Spectrograms
@@ -157,9 +174,6 @@ The given link is inactive https://github.com/mfarhan166/ECG-Signals-and-Spectro
 
 \paragraph{Answer:}
 Thanks for checking the status of the link. The repository has the implementation code and that's why we set it as Private at this stage. We will change the status to Public as soon we will receive the acceptace from the journal. The repository is working fine at us. 
-
-
-
 
 \section{Reviewer 2}
 
@@ -169,7 +183,9 @@ The abstract gives a good sense of the article and allows even a person not fami
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for the issue. The abstract has been revised with novelty. Please consider the below abstract. \\ \\ The non-invasive electrocardiogram (ECG) signals are useful in heart condition as-sessment and are found helpful in diagnosing cardiac diseases. However, traditional ways i.e., medical consultation and machine learning models require effort, knowledge, and time to interpret the ECG signals due to large amount of data and complexity. Neural networks have shown to be efficient recently in interpreting the biomedical signals including ECG and EEG. The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power. In this study, a diverse approach adopted by acquiring spectrograms using STFT as an input to convolutional neural network model. A large publicly available PTB-XL dataset was utilized, and two datasets were prepared i.e., spectrograms and raw signals for binary classification. Signal denoising, unnecessary frequency filtration and Short Time Fourier Transformation were applied to generate and process the spectrograms. Further, up and down sampling of the signals were performed at various points and accuracies attained. The highest accuracy of 99.06\% achieved by our proposed approach which reflects spectrograms are better than the raw signals. The software, developed in Python, is available freely on http:// https://github.com/mfarhan166/ECG-Signals-and-Spectrograms under MIT license.
+Thanks for the issue. The abstract has been revised with novelty. Please consider the below abstract. \\ \\ The non-invasive electrocardiogram (ECG) signals are useful in heart condition as-sessment and are found helpful in diagnosing cardiac diseases. However, traditional ways i.e., medical consultation and machine learning models require effort, knowledge, and time to interpret the ECG signals due to large amount of data and complexity. Neural networks have shown to be efficient recently in interpreting the biomedical signals including ECG and EEG. The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power. In this study, a diverse approach adopted by acquiring spectrograms using STFT as an input to convolutional neural network model. A large publicly available PTB-XL dataset was utilized, and two datasets were prepared i.e., spectrograms and raw signals for binary classification. Signal denoising, unnecessary frequency filtration and Short Time Fourier Transformation were applied to generate and process the spectrograms. Further, up and down sampling of the signals were performed at various points and accuracies attained. The highest accuracy of 99.06\% achieved by our proposed approach which reflects spectrograms are better than the raw signals. The software, developed in Python, is available freely on http:// https://github.com/mfarhan166/ECG-Signals-and-Spectrograms under MIT license. \\\\
+
+Abstract is revised as per instructions in section `Abstract' with the text of '\textit{The non-invasive electrocardiogram (ECG) signals are useful in heart condition as-sessment and are found helpful in diagnosing cardiac diseases. However, traditional ways i.e., medical consultation and machine learning models require effort, knowledge, and time to interpret the ECG signals due to large amount of data and complexity. Neural networks have shown to be efficient recently in interpreting the biomedical signals including ECG and EEG. The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power. In this study, a diverse approach adopted by acquiring spectrograms using STFT as an input to convolutional neural network model. A large publicly available PTB-XL dataset was utilized, and two datasets were prepared i.e., spectrograms and raw signals for binary classification. Signal denoising, unnecessary frequency filtration and Short Time Fourier Transformation were applied to generate and process the spectrograms. Further, up and down sampling of the signals were performed at various points and accuracies attained. The highest accuracy of 99.06\% achieved by our proposed approach which reflects spectrograms are better than the raw signals. The software, developed in Python, is available freely on http:// https://github.com/mfarhan166/ECG-Signals-and-Spectrograms under MIT license.}' at lines 16-35
 
 \paragraph{Issue 2:}
 \begin{displayquote}
@@ -178,8 +194,10 @@ Additionally, most of the introduction is focused on ECG signal denoising and th
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for reaising this issue. The real life examples of ECG are added as mentioned below.
-ECG is useful in finding various heart related diseases including cardiovascular disorder [48], heart bundle branch block [49], ST-T ischemic changes for coronary heart disease [50], atrial fibrilliations due to disordered heart rhythm [51], left ventriuclar hypertrophy [52] and acute pericarditis [53]. 
+Thanks for raising this issue. The real life examples of ECG are added as mentioned below.
+ECG is useful in finding various heart related diseases including cardiovascular disorder [48], heart bundle branch block [49], ST-T ischemic changes for coronary heart disease [50], atrial fibrilliations due to disordered heart rhythm [51], left ventriuclar hypertrophy [52] and acute pericarditis [53]. \\\\
+
+The useful applications of ECG are added in section `introduction' with the text of '\textit{ECG is useful in finding various heart related diseases including cardiovascular disor-der [48], heart bundle branch block [49], ST-T ischemic changes for coronary heart disease [50], atrial fibrillations due to disordered heart rhythm [51], left ventricular hypertrophy [52] and acute pericarditis [53]. }' at lines 53-56
 
 \paragraph{Comment 3:}
 \begin{displayquote}
@@ -197,7 +215,9 @@ The methodology chapter starts quite abruptly without any introduction to the ma
 \paragraph{Answer:}
 Thanks for the pointing out. The approaches in methodology is section is introduced in one short paragraph as given below:
 
-The ECG signals may contain various type of noises i.e., basline wander, power line interefernce which produces some additional frequency components i.e., low, and high frequencies and can effect the classification accuracy. Therefore, wavelet transformation was considered for denoising the signals. Similarly, Fourier Transformation divides the biomedical signals into time-frequency domain, through which an unwanted frequencies can be filtered with the purpose of data size reduction. The key advantage of reducing data size is to present the complete data into less resolution image i.e., spectrogram which helps in memory and computational management. Spectrograms depicts the data into more distinguable form than the raw signals i.e., recent studies [38-40] reveals that the data feed as spectrograms into neural network resulted in better accuracy which urged us to produce spectrograms using STFT. 
+The ECG signals may contain various type of noises i.e., baseline wander, power line interference which produces some additional frequency components i.e., low, and high frequencies and can affect the classification accuracy. Therefore, wavelet trans-formation was considered for denoising the signals. Similarly, Fourier Transformation divides the biomedical signals into time-frequency domain, through which an un-wanted frequency can be filtered with the purpose of data size reduction. The key ad-vantage of reducing data size is to present the complete data into less resolution image i.e., spectrogram which helps in memory and computational management. Spectro-grams depicts the data into more distinguishable form than the raw signals i.e., recent studies [38-40] reveals that the data feed as spectrograms into neural network resulted in better accuracy which urged us to produce spectrograms using STFT.  \\\\
+
+A short introduction is added in section `methodology' with the text of '\textit{The ECG signals may contain various type of noises i.e., baseline wander, power line interference which produces some additional frequency components i.e., low, and high frequencies and can affect the classification accuracy. Therefore, wavelet trans-formation was considered for denoising the signals. Similarly, Fourier Transformation divides the biomedical signals into time-frequency domain, through which an un-wanted frequency can be filtered with the purpose of data size reduction. The key ad-vantage of reducing data size is to present the complete data into less resolution image i.e., spectrogram which helps in memory and computational management. Spectro-grams depicts the data into more distinguishable form than the raw signals i.e., recent studies [38-40] reveals that the data feed as spectrograms into neural network resulted in better accuracy which urged us to produce spectrograms using STFT. }' at lines 222-232
  
 \paragraph{Issue 5:}
 \begin{displayquote}
@@ -213,7 +233,7 @@ Fig. 2 text is not visible, please improve it.  Fig/3 the same comment. Fig.4 pl
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for this issue. The image font size enhanced.
+Thanks for this issue. The images font size enhanced.
 
 \paragraph{Issue 7:}
 \begin{displayquote}
@@ -222,6 +242,8 @@ The conclusions look good. However, again multiple uses of personal pronouns mak
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for raising the point. Use of personal pronouns removed from the whole paper and sentences are adjusted accordingly. The novelty is described in the abstract as suggested. 
+Thanks for raising the point. Use of personal pronouns removed from the whole paper and sentences are adjusted accordingly. \\\\
+
+The novelty is described in the section `abstract' with the text of '\textit{The novelty in proposed work is representation of data to convolutional neural network model in well understood i.e., Spectrograms. Moreover, frequency filtration was applied through Short Time Fourier Transoformation (STFT) with purpose of reducing data at possible limit at which a simple architecture of CNN model showed high accuracy rather than to utilize the complex model which ultimately requires more momeory and computational power.}' at lines 21-26 
 
 \end{document}
