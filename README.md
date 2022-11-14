@@ -5,6 +5,8 @@ ECG-Signals-and-Spectrograms
 
 At the main directory, there are two jupyter notebooks, of which one is showing the complete implemenation code for Spectrograms data and the other is showing the same code but for implementation of Raw ECG signals data. We showed the output of each code part inside the each notebook.
 
+A pre-processing jupyter notebook is also given which included Lead v1 extraction, denoising, frequency filtration, spectrograms, raw signals and data augmenation approaches. Only need to change the Source / Destination Path for each function.
+
 There is another folder named as Graph, which consists of jupyter notebook that is showing the various graphs (alongwith code) which we used in our study.
 
 One more folder is sampling rate, which consists of 08 jupyter notebooks and each of which is named to the particular sample rate along with implemenation code in python programming language.
