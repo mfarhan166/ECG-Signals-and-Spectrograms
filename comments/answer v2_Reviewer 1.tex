@@ -80,6 +80,17 @@ Issue 8b from the previous review. I maintain that up-sampling the signal does n
 
 \paragraph{Answer:}
 Thank you for this issue. 
+We agree that up-sampling gives lower accuracy than original signal.
+In our investigation we checked if interpolation is able to make our analysis better.
+
+(a) We skipped the up-sampling from Fig. 8.
+
+We added the following text:
+
+'We checked if interpolation (up-sampling) is able to make our analysis better. For 200Hz we get XXX accuracy, for 400Hz we get YYY accuracy,
+therefore '.
+
+From Figure 6, it can be seen that the highest accuracy is achieved just for the sampling frequency of 100 Hz? Any other frequency means a decrease in accuracy, because where to get additional information about the signal, when physically this information is not there. The results achieved are just the result of interpolation. Such a study would make sense if the original sampling frequency of the ECG signal was high enough, such as 1 kHz or 2kHz. Another issue is connecting the points on the graph with 6 straight lines, after all, no calculations were made for 159 Hz.
 
 
 \vspace{0.25in}
