@@ -27,6 +27,22 @@ The changes are highlighted in the output of the latexdiff file attached to this
 "Since, one of the study aim was to reduce the data, therefore, by analysing ECG signals visually and by experiments we set the threshold of 2 which means all the data points associated with frequency more than two i.e., high QRS peaks (downward in lead V1) will be discard because the signals can classify through the base patterns." What can be understood that all frequency components above 2 are reduced to 0. However, the authors do not specify whether they mean 2 Hz (the unit is important). In this part of the paper there is no reference to the frequency band that the ECG signal covers. In the situation, as presented by the authors, then above a frequency of 2 Hz there are no longer any components derived from the ECG signal, as can be seen in the spectrograms. There are also reservations about the spectrograms presented, which have neither a time axis nor a frequency axis let alone the values that would be presented.
 \end{displayquote}
 
+\paragraph{Answer:}
+
+Thanks for the issue. We modified all images description which is now showing as under: \\\\
+
+'\textit{
+Fig 1 description: ''ECG Cardiac Cycle (image credit: Public Domain): x-axis (time), y-axis (amplitude in mV),     typical duration (1 sec)''\\\\
+Fig 2 description: ''(a) Normal ECG signals: x-axis (samples/datapoints), y-axis (frequency in Hz) (b) Raw signal transformed into spectrogram: x-axis (data segments), y-axis (frequency in Hz), (c) ASMI ECG signals: x-axis (samples/datapoints) (d) Raw signal transformed into spectrograms: x-axis (data segments), y-axis (frequency in Hz)''\\\\
+Fig 3 description: ''(a) Spectrogram before frequency filtration: x-axis (Data segments), y-axis (frequency in Hz), (b) Spectrogram after frequency filtration: x-axis (Data segments), y-axis (fre-quency in Hz)''\\\\
+Fig 4 description: ''Proposed model architecture with 1 input layer, 4 convolutional layers and 1 output layer''\\\\
+Fig 5 description: ''Memory Proportion on both datasets: raw signals and spectrograms''\\\\
+Fig 6 description: ''(a) Data Analytics: accuracy, precision and loss in log scale for both datasets: raw signals and spectrograms, (b) Validation accuracy: x-axis (no. of epochs), y-axis (accuracy) for both datasets: raw signals and spectrograms''\\\\
+Fig 7 description: ''Learning rate evaluation on both datasets: raw signals and spectrograms: x-axis (learning rate), y-axis (accuracy) ''\\\\
+Fig 8 description: ''ECG sampling rate influence (down sampling) on algorithm quality: x-axis (sampling rate), y-axis (accuracy)''\\\\\\
+}
+
+
 
 \paragraph{Issue 1a:}
 \begin{displayquote}
@@ -34,7 +50,7 @@ What can be understood that all frequency components above 2 are reduced to 0. H
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. In frequency filtration, our aim was to reduce the sample size as much as possible. Since, the Anteroseptal Myocardial Infarction can be distinguised through ST elevation in lead V1 [], therefore, we took the cutoff of high frequency component only i.e., above than 2 Hz as shown in fig. 3(a) where one can see there are two components above this cutoff. 
+Thank you for this issue. In frequency filtration, our aim was to reduce the sample size as much as possible. Since, the Anteroseptal Myocardial Infarction can be distinguised through ST elevation in lead V1 [], therefore, we took the cutoff of high frequency component only i.e., above than 2 Hz as shown in fig. 3(a) where one can see there are two components above this cutoff.
 
 With regards to frequency bands, there are no such information at the PTB-XL dataset repo page except that there dataset were calculated in 500 Hz and 100 Hz sampling frequency. So, we utilized 100 Hz dataset which is mentioned in the article text i.e., Methodology section. 
 
@@ -44,7 +60,7 @@ In the situation, as presented by the authors, then above a frequency of 2 Hz th
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for raising this issue. Time and Frequency axis are now added into the spectrograms (as given in below fig). One can see, in the spectrogram (b), there are no frequency components above 2 Hz frequency at the Y-axis. 
+Thanks for raising this issue. Time and Frequency axis are now added into the spectrograms (as given in below fig). One can see, in the spectrogram (b), there are no frequency components above 2 Hz frequency at the Y-axis.
 
 \includegraphics[scale=0.55]{before and after spectrogram.JPG}
 
@@ -55,7 +71,7 @@ Nor has it been explained what is the relationship of the threshold of 2 that hi
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. As mentioned before, we were aimed to reduce the high peaks from the V1 lead becuase both of the classes can be distinguish without QRS peaks as ST elevation can be used to detect disease from Lead V1. Therefore, by visualizing the spectrograms (before filtration), we found that 2 Hz is best option because there are few component exists above this cutoff and it also do not disturb the ST elevation shape in ECG signals. 
+Thank you for this issue. As mentioned before, we were aimed to reduce the high peaks from the V1 lead becuase both of the classes can be distinguish without QRS peaks as ST elevation can be used to detect disease from Lead V1. Therefore, by visualizing the spectrograms (before filtration), we found that 2 Hz is best option because there are few component exists above this cutoff and it also do not disturb the ST elevation shape in ECG signals.
 
 \paragraph{Issue 3:}
 \begin{displayquote}
