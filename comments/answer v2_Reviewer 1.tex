@@ -27,22 +27,6 @@ The changes are highlighted in the output of the latexdiff file attached to this
 "Since, one of the study aim was to reduce the data, therefore, by analysing ECG signals visually and by experiments we set the threshold of 2 which means all the data points associated with frequency more than two i.e., high QRS peaks (downward in lead V1) will be discard because the signals can classify through the base patterns." What can be understood that all frequency components above 2 are reduced to 0. However, the authors do not specify whether they mean 2 Hz (the unit is important). In this part of the paper there is no reference to the frequency band that the ECG signal covers. In the situation, as presented by the authors, then above a frequency of 2 Hz there are no longer any components derived from the ECG signal, as can be seen in the spectrograms. There are also reservations about the spectrograms presented, which have neither a time axis nor a frequency axis let alone the values that would be presented.
 \end{displayquote}
 
-\paragraph{Answer:}
-
-Thanks for the issue. We modified all images description which is now showing as under: \\\\
-
-'\textit{
-Fig 1 description: ''ECG Cardiac Cycle (image credit: Public Domain): x-axis (time), y-axis (amplitude in mV),     typical duration (1 sec)''\\\\
-Fig 2 description: ''(a) Normal ECG signals: x-axis (samples/datapoints), y-axis (frequency in Hz) (b) Raw signal transformed into spectrogram: x-axis (data segments), y-axis (frequency in Hz), (c) ASMI ECG signals: x-axis (samples/datapoints) (d) Raw signal transformed into spectrograms: x-axis (data segments), y-axis (frequency in Hz)''\\\\
-Fig 3 description: ''(a) Spectrogram before frequency filtration: x-axis (Data segments), y-axis (frequency in Hz), (b) Spectrogram after frequency filtration: x-axis (Data segments), y-axis (fre-quency in Hz)''\\\\
-Fig 4 description: ''Proposed model architecture with 1 input layer, 4 convolutional layers and 1 output layer''\\\\
-Fig 5 description: ''Memory Proportion on both datasets: raw signals and spectrograms''\\\\
-Fig 6 description: ''(a) Data Analytics: accuracy, precision and loss in log scale for both datasets: raw signals and spectrograms, (b) Validation accuracy: x-axis (no. of epochs), y-axis (accuracy) for both datasets: raw signals and spectrograms''\\\\
-Fig 7 description: ''Learning rate evaluation on both datasets: raw signals and spectrograms: x-axis (learning rate), y-axis (accuracy) ''\\\\
-Fig 8 description: ''ECG sampling rate influence (down sampling) on algorithm quality: x-axis (sampling rate), y-axis (accuracy)''\\\\\\
-}
-
-
 
 \paragraph{Issue 1a:}
 \begin{displayquote}
@@ -50,9 +34,8 @@ What can be understood that all frequency components above 2 are reduced to 0. H
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. In frequency filtration, our aim was to reduce the sample size as much as possible. Since, the Anteroseptal Myocardial Infarction can be distinguised through ST elevation in lead V1 [], therefore, we took the cutoff of high frequency component only i.e., above than 2 Hz as shown in fig. 3(a) where one can see there are two components above this cutoff.
-
-With regards to frequency bands, there are no such information at the PTB-XL dataset repo page except that there dataset were calculated in 500 Hz and 100 Hz sampling frequency. So, we utilized 100 Hz dataset which is mentioned in the article text i.e., Methodology section. 
+Thank you for this issue. In frequency filtration, our aim was to reduce the sample size as much as possible. Since, the Anteroseptal Myocardial Infarction can be distinguised through ST elevation in lead V1, therefore, we considered a high cutoff frequency components only i.e., above than 2 Hz as shown in fig. 3(a). We did not find any official information about frequency bands at PTB-XL dataset repo page. \\
+We mentioned the unit with digit 2 (please see algorithm 2, section '3.1.2. Frequency Filtration' (line No. 277 and 280) and apologize for that.  
 
 \paragraph{Issue 1b:}
 \begin{displayquote}
@@ -60,10 +43,8 @@ In the situation, as presented by the authors, then above a frequency of 2 Hz th
 \end{displayquote}
 
 \paragraph{Answer:}
-Thanks for raising this issue. Time and Frequency axis are now added into the spectrograms (as given in below fig). One can see, in the spectrogram (b), there are no frequency components above 2 Hz frequency at the Y-axis.
-
-\includegraphics[scale=0.55]{before and after spectrogram.JPG}
-
+Thanks for asking. Axis are now added into the spectrograms. The said figure No. 3 is revised along with description as per instructions.
+The explanatory text has been added as well at section `3.1.2. Frequency Filtration `, Line No. 290-301: \\\\  '\textit{''In the below Fig. 3, (a) is showing spectrogram before frequency filtration in which x-axis represents data segments which means each segment contains five data points with their corresponding frequencies at y-axis, while (b) is showing after operation with the same axis information. However, number of data segments reduced in (b) be-cause we dropped all the data points having frequency greater than 2 Hz instead of replacing them with zero values. We considered the data segments at x-axis instead of time because it gives more presentable and disguisable information (among both clas-ses) for the purpose of neural network training with improved accuracy as shown in results section. It is pertinent to mention here that, both x and y axis were completely omitted from all of figures during preparation of dataset with the aim of neural net-work model training because it can affect the overall accuracy.''}
 
 \paragraph{Issue 2:}
 \begin{displayquote}
@@ -71,7 +52,7 @@ Nor has it been explained what is the relationship of the threshold of 2 that hi
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. As mentioned before, we were aimed to reduce the high peaks from the V1 lead becuase both of the classes can be distinguish without QRS peaks as ST elevation can be used to detect disease from Lead V1. Therefore, by visualizing the spectrograms (before filtration), we found that 2 Hz is best option because there are few component exists above this cutoff and it also do not disturb the ST elevation shape in ECG signals.
+Thank you for this issue. Since, we were aimed to reduce the data through removal of high peaks from the V1 lead, therefore, the cutoff 2 Hz were choosen. When we visualized the spectrogram, we picked the top frequencies for this purpose which then applied as frequency filtration. Additionally, without QRS peaks, ST elevation was still available in the filterd signal which was enough to distinguish both normal and disease classes in terms of accuracy achieved. 
 
 \paragraph{Issue 3:}
 \begin{displayquote}
@@ -79,7 +60,9 @@ The explanations provided in the above-mentioned issues of reducing interference
 \end{displayquote}
 
 \paragraph{Answer:}
-Thank you for the issue. In the two articles referenced as [54] and [55] in the reference section of submitted paper, experiments taken by the authors and they support the wavelet transformation as a suitable method for reducing interference / signal analysis. Therefore, we beleive that WT is suitable for our work which is shown in accuracy obtained as a results.
+Thanks for this issue and reference suggestion. In the two articles referenced as [54] and [55] in the reference section of submitted paper, experiments taken by the authors and they support the wavelet transformation as a suitable method for reducing interference / signal analysis. Therefore, we beleive that WT is suitable for our work which is shown in accuracy obtained as a results.
+A description has been added in section '3.1.1. Denoising' at line 246-249 with the text of: \\\\ 
+ '\textit{''The through experiments by the authors of [54-55], gave us a motivation to apply the Wavelet transformation for our purposed work to remove the noise from the signals as shown in Algorithm 1, when it retains important diagnostic data [54]. ''}
 
 \paragraph{Issue 4:}
 \begin{displayquote}
@@ -87,27 +70,18 @@ Figure 2b,d and 3 present obtained spectrograms. In the cited paper [45] (Kang M
 \end{displayquote}.
 
 \paragraph{Answer:}
-Thank you for this issue. Color mapping can be changed, it only need to change cmap but according to our neural network architecture, we are passing a particular specified channel due to which we achieved higher accuracy with our proposed architecture. Additionally, the images are not in particular (or binarized), it represents several intensities or band maps based on gray color intensity. This color mapping is only for visualization purposes but in our case, it is specified as per performance of our neural network achitecture. 
+Thanks for asking about spectrograms color. Color mapping can be changed, it only need to change cmap but according to our neural network architecture, we are passing a particular specified channel i.e., single, due to which we achieved higher accuracy with our proposed architecture. Additionally, the images are not in particular (or binarized), it represents several intensities or band maps based on gray color intensity. This color mapping is only for visualization purposes but in our case, it is specified as per performance of our neural network achitecture. Additionally, colored images holds more memory than grayscale and we are focused about memory usage in proposed work. The attempt was to obtain acceptable accuracy through spectrograms which was not possible on raw signals. 
 
 \paragraph{Issue 5:}
 \begin{displayquote}
 Issue 8b from the previous review. I maintain that up-sampling the signal does not make sense, this part of the work I would skip.
-\end{displayquote}.
+\end{displayquote}
 
 \paragraph{Answer:}
-Thank you for this issue. 
-We agree that up-sampling gives lower accuracy than original signal.
-In our investigation we checked if interpolation is able to make our analysis better.
+Thank you for the suggestion. 
+We agreed that up-sampling gives lower accuracy than original signal. In our investigation we checked if interpolation is able to make our analysis better. We skipped the up-sampling from Fig. 8 and added the following text in section '4.4.4. Sampling Rate' at line 426-430:\\\\
 
-(a) We skipped the up-sampling from Fig. 8.
-
-We added the following text:
-
-'We checked if interpolation (up-sampling) is able to make our analysis better. For 200Hz we get XXX accuracy, for 400Hz we get YYY accuracy,
-therefore '.
-
-From Figure 6, it can be seen that the highest accuracy is achieved just for the sampling frequency of 100 Hz? Any other frequency means a decrease in accuracy, because where to get additional information about the signal, when physically this information is not there. The results achieved are just the result of interpolation. Such a study would make sense if the original sampling frequency of the ECG signal was high enough, such as 1 kHz or 2kHz. Another issue is connecting the points on the graph with 6 straight lines, after all, no calculations were made for 159 Hz.
-
+ '\textit{'We checked, if interpolation (up-sampling) is able to make our analysis better. For 200 Hz we get 71.32\% accuracy, for 400 Hz, 800 Hz, 600 Hz and 1k Hz, we get 82.34\%, 66.32\%, 81\% and 64.21\% accuracy respectively. We concluded that, adding or deleting dummy data among the original signals cannot give performance equal to the original signals.'}
 
 \vspace{0.25in}
 
